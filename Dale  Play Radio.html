@@ -1,0 +1,94 @@
+<!Dale Play Radio html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dale Play Radio</title>
+    <style>
+        /* Fondo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/foto-gratis/equipo-sala-grabacion-musical-vacia_1303-20399.jpg?t=st=1733544508~exp=1733548108~hmac=fe98876f8a1a3afa1567fb6da467499807b1f0124531ec06ee0a568d90875db2&w=740'); /* Cambia esta URL por la URL de tu imagen */
+            background-size: cover;  /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed;  /* Hace que el fondo se quede fijo al hacer scroll */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #FF6347;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para el título */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente para los contenidos */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #FF4500;
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #333;
+        }
+
+        /* Animación para el título */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        h1 {
+            animation: fadeIn 2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡PONE DALE PLAY!</h1>
+        <p>Haz clic en el botón para empezar a escuchar nuestra transmisión en vivo.</p>
+
+        <!-- Botón para iniciar la transmisión -->
+        <button class="button" onclick="iniciarRadio()">Iniciar Radio</button>
+
+        <!-- Reproductor de radio -->
+        <audio id="reproductor" controls style="display:none;">
+            <source src="https://streaming01.shockmedia.com.ar/8736/stream" type="audio/mp3">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+    </div>
+
+    <script>
+        function iniciarRadio() {
+            var reproductor = document.getElementById("reproductor");
+            reproductor.style.display = "block";  // Muestra el reproductor cuando se hace clic
+            reproductor.play();  // Inicia la transmisión
+            alert("¡Estás escuchando Dale Play!");
+        }
+    </script>
+
+</body>
+</html>
